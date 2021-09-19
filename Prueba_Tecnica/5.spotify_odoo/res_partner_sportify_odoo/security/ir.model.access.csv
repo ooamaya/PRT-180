@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner_music_genres,res_partner_music_genres,model_res_partner_music_genres,,1,1,1,1
+access_res_partner_music_recomends,res_partner_music_recomends,model_res_partner_music_recomends,,1,1,1,1

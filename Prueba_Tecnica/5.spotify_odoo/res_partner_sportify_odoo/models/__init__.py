@@ -1,0 +1,1 @@
+from . import res_partner_inherits,res_partner_music_genres,res_partner_music_recomends

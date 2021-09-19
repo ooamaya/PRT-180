@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!-- Mail template are declared in a NOUPDATE block so users can freely customize/delete them -->
+    <data noupdate="1">
+        <!--Email template -->
+        <record id="email_template_check_in_request" model="mail.template">
+            <field name="name">Check In: Estado Abierta</field>
+            <field name="model_id" ref="hr_cruservi_check_in_out.model_hr_employee_checkin"/>
+            <field name="email_from">general@odoo.com</field>
+            <field name="email_to">${object.checkin_responsible.login}</field>
+            <field name="subject">Nueva Solicitud de Check In Creada</field>
+            <field name="body_html" type="html">
+                <div> Estimado/a ${object.checkin_responsible.display_name},
+                    <br /><br />El usuario ${object.create_uid.name} a confirmado la solicitud de Check IN No ${object.name}<br />
+                </div>
+                <div>
+                    <!-- div del boton para entrar al registro-->
+                    <div style="text-align:center;margin: 16px 0px 16px 0px;">
+                        <a style="text-decoration-thickness:auto;background-color: #875A7B
+                                ; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff
+                                ; border-radius: 5px; font-size:13px;" 
+                            href="/web#id=${object.id}&amp;model=hr.employee.checkin&amp;view_type=form&amp;
+                                cids=${object.company_id.id}">Ver el formulario</a><br />
+                    </div>
+                    Por favor realizar los procesos para el ingreso del nuevo colaborador<br /><br /> 
+                    Gracias.
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

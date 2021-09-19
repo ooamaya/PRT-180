@@ -1,0 +1,42 @@
+
+<odoo> 
+    <data>
+
+        <record id="res_partner_music_genres_form" model="ir.ui.view">
+            <field name="name">res.partner.music.genres.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="music_genres" widget="many2many_tags"/>
+                </field>
+                <xpath expr="//page[@name='internal_notes']" position='after'>
+                    <page string='Music Recomendations'>
+                        <div>
+                            <field
+                            name="music_recomendations"
+                            widget="section_and_note_one2many"
+                            mode="tree,kanban"
+                            attrs="{'readonly': True}"
+                            >
+                                <tree
+                                    string="Music Recomendations"
+                                    editable="bottom"
+                                >
+                                    <control>
+                                        <create name="add_recomendation" string="Add Recomendation"/>
+                                    </control>
+                                    <field name="music_genre_id"/>
+                                    <field name="track"/>
+                                    <field name="artist"/>
+                                    <field name="url" widget='url'/>
+                                </tree>
+                            </field>
+                        </div> 
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

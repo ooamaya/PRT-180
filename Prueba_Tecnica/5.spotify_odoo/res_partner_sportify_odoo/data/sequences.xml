@@ -1,0 +1,24 @@
+<odoo>
+    <data noupdate="1">
+
+        <!--secuencia para activos de software-->
+        <record id="seq_ot_sw_asset" model="ir.sequence">
+            <field name="name">SW asset seq</field>
+            <field name="code">ot.asset.sequence</field>
+            <field name="prefix">SWA-</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--secuencia para proveedor de software-->
+        <record id="seq_ot_software" model="ir.sequence">
+            <field name="name">Software sequence</field>
+            <field name="code">ot.software.sequence</field>
+            <field name="prefix">SW-</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+           
+    </data>
+</odoo>     
